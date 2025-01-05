@@ -1,0 +1,7 @@
+{
+  "default_output_dir": "resized_images",
+  "default_resize_width": 800,
+  "default_resize_height": 600,
+  "preserve_aspect_ratio": true,
+  "log_level": "INFO"
+}

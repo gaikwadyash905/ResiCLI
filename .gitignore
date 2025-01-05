@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.coverage
+.idea/
+.vscode/
+tests/
+dist/
+build/
+output/
+resicli.egg-info/
