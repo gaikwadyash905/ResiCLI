@@ -44,19 +44,15 @@ resicli input_image.jpg --resize 800x600 --output /path/to/output_directory
 
 ### Options
 
---resize WIDTHxHEIGHT: Resize the image to the specified width and height.
-
---resize-by-percent PERCENTAGE: Resize the image by a specified percentage.
-
---output DIRECTORY: Specify the directory to save resized images. Default is the current working directory.
-
---preview: Preview the resized image before saving.
-
---preserve-aspect: Preserve the aspect ratio of the image.
-
---quality QUALITY: Set the quality of the output image (JPEG only). Default is 85%.
-
---undo: Restore original images from backup.
+| Option | Description | Example |
+|--------|-------------|---------|
+| `--resize WIDTHxHEIGHT` | Resize image to specific dimensions | `--resize 800x600` |
+| `--resize-by-percent PERCENTAGE` | Resize image by percentage | `--resize-by-percent 50` |
+| `--output DIRECTORY` | Output directory for resized images (Default: current directory) | `--output ./resized` |
+| `--preview` | Show preview before saving | `--preview` |
+| `--preserve-aspect` | Maintain aspect ratio during resize | `--preserve-aspect` |
+| `--quality QUALITY` | JPEG quality (1-100, Default: 85) | `--quality 90` |
+| `--undo` | Restore image from backup | `--undo` |
 
 ## Examples
 
