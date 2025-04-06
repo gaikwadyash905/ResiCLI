@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resicli"
+version = "1.0.1"
+description = "A CLI tool for bulk image resizing"
+readme = "README.md"
+authors = [
+    {name = "Yash Gaikwad", email = "gaikwadyash905@gmail.com"}
+]
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "Pillow>=9.0.0",
+    "click>=8.0.0",
+    "tqdm>=4.65.0",
+]
+keywords = ["image", "resize", "bulk", "cli", "pillow"]
+
+[project.urls]
+Homepage = "https://github.com/gaikwadyash905/ResiCLI"
+
+[project.scripts]
+resicli = "resicli.cli:main"
+
+[tool.setuptools]
+packages = ["resicli"]

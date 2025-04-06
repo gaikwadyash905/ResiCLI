@@ -1,46 +1,8 @@
-import os
-import shutil
-import tempfile
 from setuptools import setup, find_packages
-from setuptools.command.install import install
-from setuptools.command.sdist import sdist
-from setuptools.command.bdist_egg import bdist_egg
-
-CUSTOM_DIST_DIR = tempfile.mkdtemp(prefix="resicli_dist_")
-CUSTOM_BUILD_DIR = tempfile.mkdtemp(prefix="resicli_build_")
-CUSTOM_EGG_INFO_DIR = tempfile.mkdtemp(prefix="resicli_egg_info_")
-
-class CustomInstallCommand(install):
-    def run(self):
-        install.run(self)
-        print(f"Installation complete. Distribution files are located in: {CUSTOM_DIST_DIR}")
-        print(f"Build files are located in: {CUSTOM_BUILD_DIR}")
-        
-        # Clean up build artifacts
-        try:
-            if os.path.exists('build'):
-                shutil.rmtree('build')
-            if os.path.exists('resicli.egg-info'):
-                shutil.rmtree('resicli.egg-info')
-            print("Cleaned up build artifacts successfully.")
-        except Exception as e:
-            print(f"Warning: Could not clean up build artifacts: {e}")
-
-class CustomSdistCommand(sdist):
-    def run(self):
-        self.dist_dir = CUSTOM_DIST_DIR
-        sdist.run(self)
-
-class CustomBdistEggCommand(bdist_egg):
-    def run(self):
-        self.dist_dir = CUSTOM_DIST_DIR
-        self.build_base = CUSTOM_BUILD_DIR
-        self.egg_base = CUSTOM_EGG_INFO_DIR
-        bdist_egg.run(self)
 
 setup(
     name="resicli",
-    version="1.0.0",
+    version="1.0.1",
     author="Yash Gaikwad",
     author_email="gaikwadyash905@gmail.com",
     description="A CLI tool for bulk image resizing",
@@ -75,9 +37,4 @@ setup(
     ],
     python_requires=">=3.7",
     keywords="image resize bulk cli pillow",
-    cmdclass={
-        'install': CustomInstallCommand,
-        'sdist': CustomSdistCommand,
-        'bdist_egg': CustomBdistEggCommand,
-    },
 )
