@@ -17,6 +17,9 @@ ResiCLI is a powerful command-line tool designed to quickly and efficiently resi
 - Python 3.7 or higher
 - `pip` (Python package installer)
 
+### Install using `pip`
+    pip install resicli
+    
 ### Install from Source
 
 1. Clone the repository:
